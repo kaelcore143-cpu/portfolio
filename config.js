@@ -73,7 +73,7 @@ const CONFIG = {
       number: "02",
       icon: "fa-code",
       title: "Desarrollo Web",
-      description: "Landing pages, blogs y sitios empresariales con HTML, CSS y JavaScript. Responsive y optimizados.",
+      description: "Landing pages a $400.000 COP y páginas web completas desde $700.000 COP. Responsive y optimizadas.",
     },
     {
       number: "03",
@@ -94,13 +94,14 @@ const CONFIG = {
   offer: {
     badge: "Oferta especial",
     number: "(004)",
-    title: "Landing Page Personalizada",
-    oldPrice: "$185.000",
-    price: "$110.000",
+    title: "2 Landing Pages Personalizadas",
+    oldPrice: "$800.000",
+    price: "$300.000",
     currency: "COP",
-    note: "Pago único · Entrega en 5–7 días hábiles",
-    timerLabel: "Precio especial por tiempo limitado",
+    note: "Landing individual $400.000 · Web completa desde $700.000 COP",
+    timerLabel: "Oferta por tiempo limitado · dos landing pages",
     features: [
+      "2 landing pages personalizadas (valor $800.000)",
       "Diseño moderno y personalizado",
       "100% responsive (móvil, tablet, PC)",
       "Formulario de contacto o botón WhatsApp",
@@ -109,7 +110,7 @@ const CONFIG = {
       "Entrega en 5–7 días hábiles",
       "1 revisión de ajustes incluida",
     ],
-    ctaLabel: "Quiero mi Landing Page",
+    ctaLabel: "Quiero las 2 Landing Pages",
   },
 
   /* ── Proyectos (masonry) ─────────────────────────────────
@@ -118,26 +119,6 @@ const CONFIG = {
   projects: [
     {
       number: "01",
-      title: "Dinoruta",
-      description: "Juego de cartas con dinosaurios: escapa, lucha, recolecta gemas.",
-      image: "game-dinoruta.png",
-      tags: ["GDevelop", "Cartas", "Indie"],
-      link: "https://tortu-gas.itch.io/dinoruta",
-      linkLabel: "Ver en itch.io",
-      aspect: "4/3",
-    },
-    {
-      number: "02",
-      title: "Crazy Intense",
-      description: "Elimina fantasmas, consume pastillas y logra la máxima puntuación.",
-      image: "game-crazy-intense.png",
-      tags: ["Arcade", "GDevelop"],
-      link: "https://tortu-gas.itch.io/crazy-intense",
-      linkLabel: "Ver en itch.io",
-      aspect: "3/4",
-    },
-    {
-      number: "03",
       title: "Salupi Crochet",
       description: "Tienda online con catálogo visual, carrito y pasarela de pago.",
       image: "project-placeholder.svg",
@@ -147,17 +128,7 @@ const CONFIG = {
       aspect: "4/3",
     },
     {
-      number: "04",
-      title: "Ruta 71 Motofilms",
-      description: "Sitio web para estética vehicular de motos. Servicios, galería y contacto directo por WhatsApp.",
-      image: "project-placeholder.svg",
-      tags: ["Landing Page", "Motos", "Responsive"],
-      link: "https://ruta71motofilms.com",
-      linkLabel: "Ver sitio",
-      aspect: "3/4",
-    },
-    {
-      number: "05",
+      number: "02",
       title: "Car Films",
       description: "Landing page para estética vehicular. Servicios, galería de trabajos y contacto por WhatsApp.",
       image: "project-placeholder.svg",
@@ -179,11 +150,6 @@ const CONFIG = {
       quote: "Contraté el sitio web para mi barbería y quedé encantado. Muy buen precio, rápido y siempre dispuesto a hacer los ajustes que pedí.",
       author: "Andrés M.",
       role: "Barbero · Barranquilla",
-    },
-    {
-      quote: "El juego que desarrolló para nuestra campaña fue increíble. Muy creativo, cumplido con los tiempos y con una calidad increíble para su precio.",
-      author: "Camila T.",
-      role: "Diseñadora · Medellín",
     },
   ],
 };

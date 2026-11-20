@@ -20,14 +20,14 @@ Abre `config.js` y edita el objeto `offer`:
 ```js
 offer: {
   badge: "Oferta especial",
-  title: "Landing Page Personalizada",
-  oldPrice: "$185.000",
-  price: "$110.000",
+  title: "2 Landing Pages Personalizadas",
+  oldPrice: "$800.000",
+  price: "$300.000",
   currency: "COP",
-  note: "Pago único · Entrega en 5–7 días hábiles",
-  timerLabel: "Precio especial por tiempo limitado",
+  note: "Landing individual $400.000 · Web completa desde $700.000 COP",
+  timerLabel: "Oferta por tiempo limitado · dos landing pages",
   features: [ "...", "..." ],
-  ctaLabel: "Quiero mi Landing Page",
+  ctaLabel: "Quiero las 2 Landing Pages",
 },
 ```
 
