@@ -334,13 +334,20 @@ nav {
 }
 
 /* Cubo 3D centrado sobre los datos del hero: gira sobre el eje vertical */
+.cube-field {
+  position: relative;
+  width: min(100%, 17rem);
+  min-height: clamp(118px, 15vw, 190px);
+  margin: 0 auto var(--space-4);
+  display: grid; place-items: center;
+  pointer-events: none;
+}
 .hero-cube-scene {
   --cube-size: clamp(104px, 13vw, 168px);
   position: relative;
   width: var(--cube-size); height: var(--cube-size);
-  margin: 0 auto var(--space-4);
+  margin: 0;
   perspective: 620px;
-  pointer-events: none;
 }
 .hero-cube {
   position: relative; width: 100%; height: 100%;
@@ -353,13 +360,27 @@ nav {
   from { transform: rotateX(-22deg) rotateY(0deg); }
   to   { transform: rotateX(-22deg) rotateY(360deg); }
 }
+/* Ecuaciones flotando alrededor del cubo, no dentro */
+.cube-math {
+  position: absolute; z-index: 2;
+  font-family: var(--font-mono); font-size: 0.66rem;
+  letter-spacing: 0.06em; white-space: nowrap;
+  color: var(--color-text-muted);
+  animation: math-float 5s ease-in-out infinite alternate;
+}
+.cube-math--1 { top: 4%; left: 0; }
+.cube-math--2 { top: 16%; right: 0; color: var(--color-accent); }
+.cube-math--3 { bottom: 26%; left: -4%; }
+.cube-math--4 { bottom: 14%; right: -2%; color: var(--color-accent); }
+.cube-math--5 { top: -6%; left: 22%; }
+.cube-math--6 { bottom: -6%; right: 20%; }
+@keyframes math-float {
+  from { transform: translateY(0); opacity: 0.7; }
+  to   { transform: translateY(-5px); opacity: 1; }
+}
+
 .cube-face {
   position: absolute; inset: 0;
-  display: grid; place-items: center;
-  font-family: var(--font-mono);
-  font-size: clamp(0.6rem, 0.9vw, 0.82rem);
-  font-weight: 500; letter-spacing: -0.02em;
-  color: var(--obsidian);
   background-color: var(--color-accent);
   background-image:
     repeating-linear-gradient(0deg, rgba(17, 17, 17, 0.18) 0 1px, transparent 1px 14px),
@@ -900,7 +921,9 @@ footer {
   .offer-price { gap: var(--space-3); }
   .carousel-controls { gap: var(--space-4); }
   .carousel-arrow { width: 44px; height: 44px; }
-  .hero-cube-scene { --cube-size: 96px; margin-bottom: var(--space-3); }
+  .cube-field { width: min(100%, 14rem); margin-bottom: var(--space-3); }
+  .hero-cube-scene { --cube-size: 96px; }
+  .cube-math { font-size: 0.56rem; }
 
   /* CTA fijo: mismo botón flotante, ahora con etiqueta y área táctil amplia */
   .wa-float {
@@ -988,6 +1011,7 @@ footer {
   .reveal { opacity: 1; transform: none; }
   /* El cubo es el efecto protagonista: en modo reducido gira mucho más despacio */
   .hero-cube { animation: cube-spin 18s linear infinite !important; }
+  .cube-math { animation: none !important; }
   .service-card::before { transition: none !important; }
   /* La cinta es un anuncio decorativo: se excluye para que siga en movimiento. */
   .marquee-track { animation: marquee 18s linear infinite !important; }
