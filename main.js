@@ -383,7 +383,7 @@
       }
 
       if (cube && !prefersReducedMotion()) {
-        var drop = Math.min(y * 0.42, 260);
+        var drop = y * 1.3;
         var rotX = -26 + y * 0.035;
         var rotY = 38 + y * 0.06;
         cube.style.transform =

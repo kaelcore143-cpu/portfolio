@@ -32,7 +32,7 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 - [x] Patrón de fondo: trama diagonal tenue en rgba blanco cálido + halos carmesí/salvia, manteniendo la paleta original.
 - [x] Targets táctiles del carrusel ampliados a 44 px (el punto visible sigue siendo de 10 px).
 - [x] Efectos visuales discretos: barra de progreso de lectura (2 px carmesí, actualizada con `requestAnimationFrame`), flotación lenta del símbolo del hero (7 s), barrido diagonal en hover de servicios y entrada escalonada de tarjetas. Todos desactivados con `prefers-reduced-motion` salvo la marquesina decorativa.
-- [x] Cubo 3D verde en el borde izquierdo del hero: seis caras CSS con `perspective: 620px`, baja y rota con el scroll (`translate3d` + `rotateX/rotateY`, 0.42 px por px de scroll, tope de 260 px) dentro del mismo `requestAnimationFrame` de la barra de progreso. Se congela con `prefers-reduced-motion`.
+- [x] Cubo 3D verde en el borde derecho: seis caras CSS con `perspective: 620px`, situado fuera del hero (no queda recortado) y desciende por toda la página con el scroll (`translate3d` a 1.3 px por px de scroll + `rotateX/rotateY`) dentro del mismo `requestAnimationFrame` de la barra de progreso. Se congela con `prefers-reduced-motion`.
 - Pendiente (no solicitado ahora): formulario de contacto, sección de proceso, FAQ, política de privacidad y aviso legal.
 - Numeración de secciones inconsistente: `(003)` servicios, `(002)` manifiesto, `(005)` proyectos.
 

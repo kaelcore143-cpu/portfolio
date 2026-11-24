@@ -88,6 +88,7 @@ html {
     linear-gradient(180deg, #171717 0%, #111111 55%, #0d0d0d 100%);
   background-attachment: fixed;
   scroll-padding-bottom: 5.5rem;
+  overflow-x: hidden;
 }
 
 body {
@@ -332,11 +333,11 @@ nav {
   opacity: 0.5;
 }
 
-/* Cubo 3D decorativo: se desplaza con el scroll desde main.js */
+/* Cubo 3D decorativo: vive fuera del hero y baja por toda la página */
 .hero-cube-scene {
   --cube-size: clamp(68px, 7.5vw, 108px);
-  position: absolute; z-index: 1;
-  top: 42%; left: clamp(-56px, -3.5vw, -30px);
+  position: absolute; z-index: -1;
+  top: 32vh; right: 8px;
   width: var(--cube-size); height: var(--cube-size);
   perspective: 620px;
   pointer-events: none;
@@ -927,6 +928,7 @@ footer {
   .offer-price { gap: var(--space-3); }
   .carousel-controls { gap: var(--space-4); }
   .carousel-arrow { width: 44px; height: 44px; }
+  .hero-cube-scene { --cube-size: 64px; right: 4px; }
 
   /* CTA fijo: mismo botón flotante, ahora con etiqueta y área táctil amplia */
   .wa-float {
