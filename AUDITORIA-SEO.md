@@ -13,7 +13,7 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 | C4 | Sin `canonical`, `meta robots` ni JSON-LD. | Añadidos: `WebSite`, `Person` y 4 `Service`. No se inventaron reseñas ni valoraciones. |
 | C5 | Enlaces de WhatsApp eran `href="#"` y dependían de JS. | URLs `wa.me` reales y absolutas en el HTML. |
 | C6 | Urgencia falsa (*"Oferta por tiempo limitado"*) y plazo no confirmado (*"5–7 días hábiles"*). | `timerLabel` vaciado y oculto por CSS; plazo convertido en placeholder. |
-| C7 | Testimonios con nombres y citas no verificables. | Sustituidos por `[COMPLETAR CON EL DUEÑO]`. |
+| C7 | Testimonios con nombres y citas no verificables. | Sustituidos por los dos testimonios reales aportados por el dueño: CarFilms (*"Quedo muy bien"*) y Salupi Crochet (*"Gran resultado, aumenté mis ventas"*). |
 
 ### Alto (corregido)
 | # | Problema | Acción |
@@ -50,7 +50,6 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 
 | Dato | Dónde | Acción |
 |---|---|---|
-| Testimonios (2) y sus autores | `#testimonials`, `config.js` | Aportar testimonios reales autorizados o eliminar la sección. |
 | Plazo de entrega de la oferta | `#offer`, `config.js` | Confirmar o quitar el feature. |
 | Cifras `9+ / 4+ / 5+ / 100%` | `#stats`, `config.js` | Confirmar con el dueño; no se modificaron por ser datos preexistentes. |
 | Precios de la oferta y servicios | `#offer`, `#services`, `config.js` | Confirmar vigencia. |

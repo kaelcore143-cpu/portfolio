@@ -144,14 +144,14 @@ const CONFIG = {
   /* ── Testimonios ───────────────────────────────────────── */
   testimonials: [
     {
-      quote: "[COMPLETAR CON EL DUEÑO: testimonio real autorizado]",
-      author: "[COMPLETAR CON EL DUEÑO]",
-      role: "[COMPLETAR CON EL DUEÑO]",
+      quote: "Quedo muy bien",
+      author: "CarFilms",
+      role: "Cliente",
     },
     {
-      quote: "[COMPLETAR CON EL DUEÑO: testimonio real autorizado]",
-      author: "[COMPLETAR CON EL DUEÑO]",
-      role: "[COMPLETAR CON EL DUEÑO]",
+      quote: "Gran resultado, aumenté mis ventas",
+      author: "Salupi Crochet",
+      role: "Cliente",
     },
   ],
 };

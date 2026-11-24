@@ -513,12 +513,11 @@ nav {
 #services { background: transparent; }
 .services-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
-  border-top: var(--color-border-soft); border-left: var(--color-border-soft);
 }
 .service-card {
   position: relative;
   padding: clamp(var(--space-5), 3vw, var(--space-7));
-  border-right: var(--color-border-soft); border-bottom: var(--color-border-soft);
+  border: var(--border-width) solid rgba(229, 57, 53, 0.38);
   background: transparent;
   transition: background var(--duration) var(--ease);
   overflow: hidden;
@@ -529,6 +528,7 @@ nav {
   background: var(--color-surface-2); opacity: 0;
   transition: opacity var(--duration) var(--ease); pointer-events: none;
 }
+.service-card:hover { border-color: var(--color-primary); }
 .service-card:hover::after { opacity: 0.35; }
 /* Barrido diagonal al pasar el cursor */
 .service-card::before {
