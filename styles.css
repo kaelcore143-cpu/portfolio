@@ -332,6 +332,33 @@ nav {
   opacity: 0.5;
 }
 
+/* Cubo 3D decorativo: se desplaza con el scroll desde main.js */
+.hero-cube-scene {
+  --cube-size: clamp(68px, 7.5vw, 108px);
+  position: absolute; z-index: 1;
+  top: 42%; left: clamp(-56px, -3.5vw, -30px);
+  width: var(--cube-size); height: var(--cube-size);
+  perspective: 620px;
+  pointer-events: none;
+}
+.hero-cube {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-26deg) rotateY(38deg);
+  will-change: transform;
+}
+.cube-face {
+  position: absolute; inset: 0; display: block;
+  background: var(--color-accent);
+  border: 1px solid rgba(17, 17, 17, 0.55);
+}
+.cube-front  { transform: translateZ(calc(var(--cube-size) / 2)); }
+.cube-back   { transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2)); filter: brightness(0.55); }
+.cube-right  { transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)); filter: brightness(0.78); }
+.cube-left   { transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)); filter: brightness(0.65); }
+.cube-top    { transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2)); filter: brightness(1.15); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)); filter: brightness(0.45); }
+
 .hero-inner {
   position: relative; z-index: 2;
   max-width: var(--max-width); margin: 0 auto; width: 100%;
