@@ -1020,7 +1020,9 @@ footer {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
-  .hero-figure, .hero-cube { animation: none !important; }
+  .hero-figure { animation: none !important; }
+  /* El cubo es el efecto protagonista: en modo reducido gira mucho más despacio */
+  .hero-cube { animation: cube-spin 18s linear infinite !important; }
   .service-card::before { transition: none !important; }
   /* La cinta es un anuncio decorativo: se excluye para que siga en movimiento. */
   .marquee-track { animation: marquee 18s linear infinite !important; }
