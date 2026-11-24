@@ -364,6 +364,26 @@
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   }
 
+  /* ── Barra de progreso de lectura ──────────────────────── */
+  var progress = $('scrollProgress');
+  if (progress) {
+    var ticking = false;
+    var updateProgress = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var ratio = max > 0 ? doc.scrollTop / max : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, ratio)) + ')';
+      ticking = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateProgress);
+      }
+    }, { passive: true });
+    updateProgress();
+  }
+
   /* ── Boot ──────────────────────────────────────────────── */
   function boot() {
     try {

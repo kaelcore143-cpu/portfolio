@@ -106,6 +106,15 @@ ul { list-style: none; }
 
 ::selection { background: var(--color-primary); color: var(--industrial-white); }
 
+/* ── 2b. PROGRESO DE LECTURA ─────────────────────────────── */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 1200;
+  width: 100%; height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0); transform-origin: left center;
+  pointer-events: none;
+}
+
 /* ── 3. ACCESIBILIDAD ─────────────────────────────────────── */
 .skip-link {
   position: fixed; top: -120px; left: var(--space-4); z-index: 2000;
@@ -376,6 +385,11 @@ nav {
   color: var(--color-primary-text);
   user-select: none;
   min-height: 0.8em; /* mantiene el layout con el skeleton */
+  animation: figure-float 7s ease-in-out infinite alternate;
+}
+@keyframes figure-float {
+  from { transform: translateY(0) rotate(0deg); }
+  to   { transform: translateY(-10px) rotate(1.5deg); }
 }
 .hero-figure .glitch {
   position: absolute; inset: 0;
@@ -503,6 +517,13 @@ nav {
   transition: opacity var(--duration) var(--ease); pointer-events: none;
 }
 .service-card:hover::after { opacity: 0.35; }
+/* Barrido diagonal al pasar el cursor */
+.service-card::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(229, 57, 53, 0.22), transparent);
+  transform: skewX(-20deg); transition: left 0.55s ease; pointer-events: none;
+}
+.service-card:hover::before { left: 120%; }
 .service-card:hover .service-number { color: var(--color-primary-text); }
 .service-card:hover .service-icon { color: var(--color-accent); }
 
@@ -834,6 +855,12 @@ footer {
 /* ── 21. REVEAL ───────────────────────────────────────────── */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
+/* Entrada escalonada dentro de rejillas y listas */
+.services-grid .reveal:nth-child(2), .masonry .reveal:nth-child(2) { transition-delay: 0.08s; }
+.services-grid .reveal:nth-child(3), .masonry .reveal:nth-child(3) { transition-delay: 0.16s; }
+.services-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+.masonry .reveal:nth-child(4) { transition-delay: 0.24s; }
+.masonry .reveal:nth-child(5) { transition-delay: 0.32s; }
 
 /* ── 22. RESPONSIVE ───────────────────────────────────────── */
 /* Desktop pequeño / tablet grande */
@@ -959,6 +986,8 @@ footer {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
+  .hero-figure { animation: none !important; }
+  .service-card::before { transition: none !important; }
   /* La cinta es un anuncio decorativo: se excluye para que siga en movimiento. */
   .marquee-track { animation: marquee 18s linear infinite !important; }
   .skeleton::after { animation: none; }
