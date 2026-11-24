@@ -333,11 +333,11 @@ nav {
   opacity: 0.5;
 }
 
-/* Cubo 3D decorativo: vive fuera del hero y baja por toda la página */
+/* Cubo 3D decorativo dentro del hero: gira sobre el eje vertical */
 .hero-cube-scene {
   --cube-size: clamp(68px, 7.5vw, 108px);
-  position: absolute; z-index: -1;
-  top: 32vh; right: 8px;
+  position: absolute; z-index: 1;
+  top: 20%; right: clamp(1rem, 4vw, 4rem);
   width: var(--cube-size); height: var(--cube-size);
   perspective: 620px;
   pointer-events: none;
@@ -345,8 +345,13 @@ nav {
 .hero-cube {
   position: relative; width: 100%; height: 100%;
   transform-style: preserve-3d;
-  transform: rotateX(-26deg) rotateY(38deg);
+  transform: rotateX(-22deg) rotateY(38deg); /* estado estático con reduced-motion */
+  animation: cube-spin 9s linear infinite;
   will-change: transform;
+}
+@keyframes cube-spin {
+  from { transform: rotateX(-22deg) rotateY(0deg); }
+  to   { transform: rotateX(-22deg) rotateY(360deg); }
 }
 .cube-face {
   position: absolute; inset: 0; display: block;
@@ -928,7 +933,7 @@ footer {
   .offer-price { gap: var(--space-3); }
   .carousel-controls { gap: var(--space-4); }
   .carousel-arrow { width: 44px; height: 44px; }
-  .hero-cube-scene { --cube-size: 64px; right: 4px; }
+  .hero-cube-scene { --cube-size: 64px; right: 1rem; top: 18%; }
 
   /* CTA fijo: mismo botón flotante, ahora con etiqueta y área táctil amplia */
   .wa-float {
@@ -1015,7 +1020,7 @@ footer {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
-  .hero-figure { animation: none !important; }
+  .hero-figure, .hero-cube { animation: none !important; }
   .service-card::before { transition: none !important; }
   /* La cinta es un anuncio decorativo: se excluye para que siga en movimiento. */
   .marquee-track { animation: marquee 18s linear infinite !important; }

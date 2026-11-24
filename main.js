@@ -15,9 +15,6 @@
   const LOADING_DELAY = 400;
 
   const $ = (id) => document.getElementById(id);
-  const prefersReducedMotion = function () {
-    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  };
 
   /* ── Utilidades ────────────────────────────────────────── */
   function setBusy(el, busy) {
@@ -367,37 +364,24 @@
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   }
 
-  /* ── Progreso de lectura + cubo 3D del hero ────────────── */
+  /* ── Barra de progreso de lectura ──────────────────────── */
   var progress = $('scrollProgress');
-  var cube = $('heroCube');
-  if (progress || cube) {
+  if (progress) {
     var ticking = false;
-    var updateScrollEffects = function () {
+    var updateProgress = function () {
       var doc = document.documentElement;
-      var y = doc.scrollTop || 0;
-
-      if (progress) {
-        var max = doc.scrollHeight - doc.clientHeight;
-        var ratio = max > 0 ? y / max : 0;
-        progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, ratio)) + ')';
-      }
-
-      if (cube && !prefersReducedMotion()) {
-        var drop = y * 1.3;
-        var rotX = -26 + y * 0.035;
-        var rotY = 38 + y * 0.06;
-        cube.style.transform =
-          'translate3d(0,' + drop + 'px,0) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
-      }
+      var max = doc.scrollHeight - doc.clientHeight;
+      var ratio = max > 0 ? doc.scrollTop / max : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, ratio)) + ')';
       ticking = false;
     };
     window.addEventListener('scroll', function () {
       if (!ticking) {
         ticking = true;
-        window.requestAnimationFrame(updateScrollEffects);
+        window.requestAnimationFrame(updateProgress);
       }
     }, { passive: true });
-    updateScrollEffects();
+    updateProgress();
   }
 
   /* ── Boot ──────────────────────────────────────────────── */
