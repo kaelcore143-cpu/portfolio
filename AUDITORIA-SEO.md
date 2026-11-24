@@ -31,8 +31,8 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 - [x] Capturas reales: se capturaron las portadas publicadas de `salupicrochet.com` y `steticavehicularcarfilms.com` con Chrome headless, se guardaron en WebP (~53 KB y ~39 KB) y se usan en el portafolio con `alt` descriptivo y `loading="lazy"`.
 - [x] Patrón de fondo: trama diagonal tenue en rgba blanco cálido + halos carmesí/salvia, manteniendo la paleta original.
 - [x] Targets táctiles del carrusel ampliados a 44 px (el punto visible sigue siendo de 10 px).
-- [x] Efectos visuales discretos: barra de progreso de lectura (2 px carmesí, actualizada con `requestAnimationFrame`), flotación lenta del símbolo del hero (7 s), barrido diagonal en hover de servicios y entrada escalonada de tarjetas. Todos desactivados con `prefers-reduced-motion` salvo la marquesina decorativa.
-- [x] Cubo 3D verde en la esquina superior derecha del hero: seis caras CSS con `perspective: 620px` y rotación continua sobre el eje vertical (`cube-spin`, 9 s lineal infinito). No depende del scroll ni de JS; con `prefers-reduced-motion` la rotación se reduce a 18 s en lugar de detenerse (el efecto es el protagonista del hero).
+- [x] Efectos visuales discretos: barra de progreso de lectura (2 px carmesí, actualizada con `requestAnimationFrame`), barrido diagonal en hover de servicios y entrada escalonada de tarjetas. El grano y la marquesina siguen como estaban.
+- [x] Cubo 3D verde centrado sobre los datos del hero (`ROL / BASE / ESTADO / MODO`): seis caras CSS con `perspective: 620px`, retícula y ecuaciones (`∑ x² ≠ 0`, `∫ f(x) dx`, `E = mc²`, `∂/∂x`, `√Δ`, `logₙ x`). Gira sobre el eje vertical (`cube-spin`, 9 s lineal infinito), sin JS ni scroll; en `prefers-reduced-motion` baja a 18 s. El antiguo símbolo `≠` gigante del hero se eliminó (el `≠` sigue vivo en el tagline, el marquee y el logo del header).
 - Pendiente (no solicitado ahora): formulario de contacto, sección de proceso, FAQ, política de privacidad y aviso legal.
 - Numeración de secciones inconsistente: `(003)` servicios, `(002)` manifiesto, `(005)` proyectos.
 

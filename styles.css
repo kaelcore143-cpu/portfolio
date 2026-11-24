@@ -333,12 +333,12 @@ nav {
   opacity: 0.5;
 }
 
-/* Cubo 3D decorativo dentro del hero: gira sobre el eje vertical */
+/* Cubo 3D centrado sobre los datos del hero: gira sobre el eje vertical */
 .hero-cube-scene {
-  --cube-size: clamp(68px, 7.5vw, 108px);
-  position: absolute; z-index: 1;
-  top: 20%; right: clamp(1rem, 4vw, 4rem);
+  --cube-size: clamp(104px, 13vw, 168px);
+  position: relative;
   width: var(--cube-size); height: var(--cube-size);
+  margin: 0 auto var(--space-4);
   perspective: 620px;
   pointer-events: none;
 }
@@ -354,8 +354,16 @@ nav {
   to   { transform: rotateX(-22deg) rotateY(360deg); }
 }
 .cube-face {
-  position: absolute; inset: 0; display: block;
-  background: var(--color-accent);
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 0.9vw, 0.82rem);
+  font-weight: 500; letter-spacing: -0.02em;
+  color: var(--obsidian);
+  background-color: var(--color-accent);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(17, 17, 17, 0.18) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(90deg, rgba(17, 17, 17, 0.18) 0 1px, transparent 1px 14px);
   border: 1px solid rgba(17, 17, 17, 0.55);
 }
 .cube-front  { transform: translateZ(calc(var(--cube-size) / 2)); }
@@ -408,46 +416,6 @@ nav {
 
 .hero-side { display: flex; flex-direction: column; gap: var(--space-5); padding-bottom: var(--space-2); }
 
-.hero-figure {
-  position: relative;
-  align-self: flex-end;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(7rem, 18vw, 15rem);
-  line-height: 0.8;
-  color: var(--color-primary-text);
-  user-select: none;
-  min-height: 0.8em; /* mantiene el layout con el skeleton */
-  animation: figure-float 7s ease-in-out infinite alternate;
-}
-@keyframes figure-float {
-  from { transform: translateY(0) rotate(0deg); }
-  to   { transform: translateY(-10px) rotate(1.5deg); }
-}
-.hero-figure .glitch {
-  position: absolute; inset: 0;
-  color: var(--color-accent);
-  clip-path: inset(0 0 72% 0);
-  transform: translate(-6px, -4px);
-  opacity: 0.85;
-  animation: glitch-a 5s steps(1) infinite;
-}
-.hero-figure .glitch.b {
-  color: var(--industrial-white);
-  clip-path: inset(66% 0 0 0);
-  transform: translate(6px, 4px);
-  animation: glitch-b 6s steps(1) infinite;
-}
-@keyframes glitch-a {
-  0%, 92%, 100% { clip-path: inset(0 0 72% 0); transform: translate(-6px, -4px); }
-  93% { clip-path: inset(10% 0 60% 0); transform: translate(-14px, 0); }
-  95% { clip-path: inset(45% 0 30% 0); transform: translate(10px, 4px); }
-}
-@keyframes glitch-b {
-  0%, 88%, 100% { clip-path: inset(66% 0 0 0); transform: translate(6px, 4px); }
-  89% { clip-path: inset(30% 0 55% 0); transform: translate(14px, 0); }
-  92% { clip-path: inset(70% 0 5% 0); transform: translate(-8px, -3px); }
-}
 
 .hero-meta {
   border-top: 1px solid var(--color-border);
@@ -899,7 +867,6 @@ footer {
 /* Desktop pequeño / tablet grande */
 @media (max-width: 1100px) {
   .hero-inner { grid-template-columns: 1fr; align-items: start; gap: var(--space-6); }
-  .hero-figure { align-self: flex-start; font-size: clamp(6rem, 22vw, 9rem); }
   .hero-meta { max-width: 420px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .offer-card { grid-template-columns: 1fr; }
@@ -933,7 +900,7 @@ footer {
   .offer-price { gap: var(--space-3); }
   .carousel-controls { gap: var(--space-4); }
   .carousel-arrow { width: 44px; height: 44px; }
-  .hero-cube-scene { --cube-size: 64px; right: 1rem; top: 18%; }
+  .hero-cube-scene { --cube-size: 96px; margin-bottom: var(--space-3); }
 
   /* CTA fijo: mismo botón flotante, ahora con etiqueta y área táctil amplia */
   .wa-float {
@@ -1007,7 +974,6 @@ footer {
   .footer-inner a:hover { color: var(--color-accent); }
   .wa-float:hover { transform: translateY(-4px) scale(1.05); background: var(--color-primary); color: var(--industrial-white); }
   .nav-logo:hover img { border-color: var(--color-accent); }
-  .hero-figure:hover .glitch { animation-duration: 0.9s; }
 
   /* Transiciones suaves solo cuando hay hover disponible */
   .masonry-item img { transition: filter 0.3s ease, transform 0.3s ease; }
@@ -1020,7 +986,6 @@ footer {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
-  .hero-figure { animation: none !important; }
   /* El cubo es el efecto protagonista: en modo reducido gira mucho más despacio */
   .hero-cube { animation: cube-spin 18s linear infinite !important; }
   .service-card::before { transition: none !important; }

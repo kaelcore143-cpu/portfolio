@@ -89,12 +89,6 @@
     $('heroTagline').innerHTML = `<span class="symbol">${b.symbol || '≠'}</span> ${b.tagline || ''}`;
     $('heroDesc').textContent = b.description || '';
     $('metaRole').textContent = b.role || '';
-    $('heroSymbol').innerHTML =
-      `${b.symbol || '≠'}<span class="glitch" aria-hidden="true">${b.symbol || '≠'}</span>` +
-      `<span class="glitch b" aria-hidden="true">${b.symbol || '≠'}</span>`;
-    // El símbolo ya no es un skeleton: quita la clase
-    $('heroSymbol').classList.remove('skeleton');
-
     setBusy(document.querySelector('#hero .hero-main'), false);
     setBusy(document.querySelector('#hero .hero-side'), false);
   }
