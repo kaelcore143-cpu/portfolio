@@ -1,8 +1,9 @@
 /* ============================================================
-   KAEL CORE® — RENDER + ESTADOS + INTERACCIONES
-   · Todo el contenido se genera desde config.js
-   · Carga: skeletons (HTML) → contenido
-   · Estados: cargando / vacío / error / listo
+   KAEL CORE® — RENDER + INTERACCIONES
+   · El contenido ya existe en el HTML (indexable y sin JS).
+   · config.js solo permite editarlo desde un único lugar;
+     si falla, el HTML estático sigue siendo visible.
+   · Ningún error interno se muestra al visitante.
    ============================================================ */
 
 (function () {
@@ -12,17 +13,6 @@
      Ajusta el retardo para hacer visible el skeleton.
      Pon 0 para producción (carga instantánea).            */
   const LOADING_DELAY = 400;
-
-  /* ── Guard: config.js ausente ──────────────────────────── */
-  if (typeof CONFIG === 'undefined') {
-    const box = document.getElementById('loadError');
-    if (box) {
-      document.getElementById('loadErrorText').textContent =
-        'No se encontró config.js. Revisa que el archivo exista y esté referenciado.';
-      box.hidden = false;
-    }
-    return;
-  }
 
   const $ = (id) => document.getElementById(id);
 
@@ -40,24 +30,14 @@
       </div>`;
   }
 
-  function errorStateHTML(msg) {
-    return `
-      <div class="state state-error" role="alert">
-        <div class="state-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
-        <div class="state-title">Algo salió mal</div>
-        <p class="state-text">${msg}</p>
-      </div>`;
-  }
-
-  /** Ejecuta `fn` y, si falla, muestra un estado de error en `container`. */
+  /** Ejecuta `fn`. Si falla, el contenido estático del HTML permanece visible. */
   function guard(container, fn) {
     try {
       fn();
-      setBusy(container, false);
     } catch (err) {
-      if (container) container.innerHTML = errorStateHTML('No se pudo cargar esta sección.');
-      setBusy(container, false);
       if (window.console) console.error(err);
+    } finally {
+      setBusy(container, false);
     }
   }
 
@@ -82,7 +62,7 @@
 
   /** Imagen con fallback si el recurso falla. */
   function projectImage(src, alt, aspect) {
-    return `<img src="${src}" alt="${alt}" loading="lazy"
+    return `<img src="${src}" alt="${alt}" loading="lazy" width="800" height="600"
       style="aspect-ratio:${aspect || '4/3'};"
       onerror="this.onerror=null;this.src='project-placeholder.svg';this.alt='Imagen no disponible';">`;
   }
@@ -215,7 +195,9 @@
       ? `${o.price}<span class="currency"> ${o.currency || ''}</span>`
       : 'Consultar';
     $('offerNote').textContent = o.note || '';
-    $('offerTimer').innerHTML = `<i class="fa-solid fa-clock" aria-hidden="true"></i> ${o.timerLabel || ''}`;
+    $('offerTimer').innerHTML = o.timerLabel
+      ? `<i class="fa-solid fa-clock" aria-hidden="true"></i> ${o.timerLabel}`
+      : '';
 
     const feats = Array.isArray(o.features) ? o.features : [];
     $('offerFeatures').innerHTML = feats.length
@@ -393,18 +375,12 @@
       guard($('manifesto'), renderManifesto);
       guard($('masonry'), renderProjects);
       guard($('offerCard'), renderOffer);
-      guard($('testimonialsGrid'), renderTestimonials);
+      guard($('testimonialCarousel'), renderTestimonials);
       guard($('footerContent'), renderFooter);
       renderWhatsApp();
       initMenu();
       initReveal();
-      $('loadError').hidden = true;
     } catch (err) {
-      const box = $('loadError');
-      if (box) {
-        $('loadErrorText').textContent = 'Error inesperado al cargar el sitio.';
-        box.hidden = false;
-      }
       if (window.console) console.error(err);
     }
   }

@@ -1,0 +1,70 @@
+# Auditoría SEO / CRO — Kael Core (versión actual)
+
+Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local. **No se cambió la identidad visual**: paleta, tipografías, logo, grano, marquee, composición y animaciones siguen iguales.
+
+## 1. Hallazgos priorizados
+
+### Crítico (corregido)
+| # | Problema Evidence | Acción |
+|---|---|---|
+| C1 | El `h1`, servicios, proyectos y testimonios eran skeletons inyectados por `main.js` 400 ms después. El HTML servido tenía un `h1` vacío. | El HTML contiene ahora el contenido real, con el mismo markup que produce el JS. Funciona sin JS y es indexable. |
+| C2 | Bloque `#loadError` (*"Error de carga / No se pudo cargar la configuración del sitio"*) y `<noscript>` con error visible. | Eliminados. Ningún error interno se muestra al visitante; si `config.js` falla, permanece el HTML estático. |
+| C3 | No existían `robots.txt` ni `sitemap.xml` (404 confirmados). | Añadidos. |
+| C4 | Sin `canonical`, `meta robots` ni JSON-LD. | Añadidos: `WebSite`, `Person` y 4 `Service`. No se inventaron reseñas ni valoraciones. |
+| C5 | Enlaces de WhatsApp eran `href="#"` y dependían de JS. | URLs `wa.me` reales y absolutas en el HTML. |
+| C6 | Urgencia falsa (*"Oferta por tiempo limitado"*) y plazo no confirmado (*"5–7 días hábiles"*). | `timerLabel` vaciado y oculto por CSS; plazo convertido en placeholder. |
+| C7 | Testimonios con nombres y citas no verificables. | Sustituidos por `[COMPLETAR CON EL DUEÑO]`. |
+
+### Alto (corregido)
+| # | Problema | Acción |
+|---|---|---|
+| A1 | Title genérico (36 caracteres), descripción corta, OG sin `og:url` ni `og:image:alt`, sin Twitter Cards. | Metadatos completos y descriptivos. |
+| A2 | Métrica no verificable `PageSpeed 95+` en servicios. | Eliminada; copy neutro. |
+| A3 | Imágenes sin `width`/`height` (CLS). | Dimensiones añadidas al logo y a las imágenes de proyectos. |
+| A4 | Cuerpo a 15.2 px en móvil. | `--text-base` a `1rem` (16 px). |
+| A5 | `aria-busy="true"` permanente en contenedores. | Eliminado del HTML. |
+| A6 | Guard de testimonios apuntaba a un ID inexistente (`testimonialsGrid`). | Corregido a `testimonialCarousel`. |
+| A7 | Contenido de servicios sin encabezados semánticos en el HTML. | `h3` reales por servicio. |
+
+### Medio / bajo (pendiente de aprobación — implica cambios visuales)
+- Formulario de contacto y CTA fijo en móvil (mejoran CRO pero añaden componentes visibles).
+- Sección de proceso en 3–4 pasos y FAQ con respuestas reales.
+- Política de privacidad y aviso legal.
+- Conversión de imágenes a WebP/AVIF cuando haya capturas reales.
+- Revisión de targets táctiles de controles pequeños del carrusel (`carousel-dot`).
+- Numeración de secciones inconsistente: `(003)` servicios, `(002)` manifiesto, `(005)` proyectos.
+
+## 2. Qué se conserva de la estética
+
+- Paleta completa: `#111111`, `#E53935`, `#FF5A55`, `#B8F23B`, `#F2F0EA`, `#A6A6A6`, `#303030`.
+- Tipografías Space Grotesk / Inter / IBM Plex Mono.
+- Logo `logo.png`, símbolo `≠`, mensaje **NOT EQUAL**.
+- Estructura de secciones, grano, marquee, diagonales, hover y animaciones.
+- El retardo `LOADING_DELAY` y el render desde `config.js` siguen disponibles para edición de contenido.
+
+Únicos cambios visuales perceptibles: el texto aparece desde el primer frame (ya no hay skeleton durante 400 ms) y el reloj de "tiempo limitado" desaparece por ser urgencia falsa.
+
+## 3. Placeholders `[COMPLETAR CON EL DUEÑO]`
+
+| Dato | Dónde | Acción |
+|---|---|---|
+| Testimonios (2) y sus autores | `#testimonials`, `config.js` | Aportar testimonios reales autorizados o eliminar la sección. |
+| Plazo de entrega de la oferta | `#offer`, `config.js` | Confirmar o quitar el feature. |
+| Capturas reales de proyectos | `#projects` (`project-placeholder.svg`) | Sustituir por `[RECURSO REAL PENDIENTE]` o capturas autorizadas. |
+| Cifras `9+ / 4+ / 5+ / 100%` | `#stats`, `config.js` | Confirmar con el dueño; no se modificaron por ser datos preexistentes. |
+| Precios de la oferta y servicios | `#offer`, `#services`, `config.js` | Confirmar vigencia. |
+| Política de datos | Pendiente | Crear página real antes de añadir formulario. |
+
+## 4. Checklist de verificación
+
+- [x] Un solo `h1`, jerarquía `h2`/`h3`, `lang="es"`.
+- [x] Canonical, robots, OG, Twitter Cards y JSON-LD válidos.
+- [x] `robots.txt` y `sitemap.xml` disponibles.
+- [x] Sin banner de error ni textos de error internos en el HTML.
+- [x] Enlaces WhatsApp reales; sin `href="#"` funcionales.
+- [x] Imágenes con `alt` y dimensiones.
+- [x] Cuerpo a 16 px; sin scroll horizontal a 360 px (`scrollWidth 345 = clientWidth 345`).
+- [x] Lighthouse local: **SEO 100 / Accessibility 100 / Best Practices 100**, sin fallos (antes: SEO 100 / A11y 94, con `color-contrast` y `target-size`).
+- [x] Consola sin errores; `robots.txt` y `sitemap.xml` responden 200.
+- [ ] Republicar en GitHub Pages y volver a medir Lighthouse sobre la URL pública.
+- [ ] Confirmar datos de la tabla de placeholders.

@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kael Core — Desarrollador de videojuegos y páginas web. NOT EQUAL.">
-  <meta property="og:title" content="Kael Core — Digital Independent Creator">
-  <meta property="og:description" content="Videojuegos web, landing pages y experiencias digitales. NOT EQUAL.">
-  <meta property="og:image" content="logo.png">
+  <title>Desarrollo web y videojuegos a medida | Kael Core®</title>
+  <meta name="description" content="Kael Core desarrolla videojuegos web con GDevelop y páginas web a medida para negocios y creadores que quieren destacar. NOT EQUAL. Cotiza tu proyecto.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://kaelcore143.com/">
+
   <meta property="og:type" content="website">
-  <title>Kael Core® — Digital Independent Creator</title>
+  <meta property="og:site_name" content="Kael Core">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:url" content="https://kaelcore143.com/">
+  <meta property="og:title" content="Desarrollo web y videojuegos a medida | Kael Core®">
+  <meta property="og:description" content="Videojuegos web, landing pages y experiencias digitales con identidad propia. NOT EQUAL.">
+  <meta property="og:image" content="https://kaelcore143.com/logo.png">
+  <meta property="og:image:alt" content="Logo de Kael Core con el símbolo de desigualdad">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://kaelcore143.com/">
+  <meta name="twitter:title" content="Desarrollo web y videojuegos a medida | Kael Core®">
+  <meta name="twitter:description" content="Videojuegos web, landing pages y experiencias digitales con identidad propia. NOT EQUAL.">
+  <meta name="twitter:image" content="https://kaelcore143.com/logo.png">
+  <meta name="twitter:image:alt" content="Logo de Kael Core">
 
   <!-- Tipografías: Space Grotesk / Inter / IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,32 +34,82 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png">
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kaelcore143.com/#website",
+        "url": "https://kaelcore143.com/",
+        "name": "Kael Core",
+        "description": "Desarrollo de videojuegos web y páginas web a medida.",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://kaelcore143.com/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://kaelcore143.com/#person",
+        "name": "Kael Core",
+        "url": "https://kaelcore143.com/",
+        "jobTitle": "Digital Independent Creator",
+        "sameAs": ["https://www.instagram.com/kaelcore143/"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://kaelcore143.com/#servicio-videojuegos",
+        "name": "Desarrollo de videojuegos",
+        "description": "Juegos 2D web con GDevelop: game design, mecánicas, interfaz y publicación.",
+        "provider": { "@id": "https://kaelcore143.com/#person" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://kaelcore143.com/#servicio-web",
+        "name": "Desarrollo web",
+        "description": "Landing pages y páginas web responsive y optimizadas.",
+        "provider": { "@id": "https://kaelcore143.com/#person" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://kaelcore143.com/#servicio-ui",
+        "name": "Diseño y UI",
+        "description": "Pixel art, interfaces para juegos y diseño web con foco en UX.",
+        "provider": { "@id": "https://kaelcore143.com/#person" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://kaelcore143.com/#servicio-seo",
+        "name": "SEO y rendimiento",
+        "description": "Optimización para motores de búsqueda y velocidad de carga.",
+        "provider": { "@id": "https://kaelcore143.com/#person" }
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
   <a class="skip-link" href="#main">Saltar al contenido</a>
   <div class="grain" aria-hidden="true"></div>
 
-  <!-- Error de carga global -->
-  <div class="load-error" id="loadError" role="alert" hidden>
-    <strong>Error de carga</strong>
-    <span id="loadErrorText">No se pudo cargar la configuración del sitio.</span>
-  </div>
-
   <!-- ══════════ NAVBAR ══════════ -->
   <nav aria-label="Navegación principal">
     <a href="#hero" class="nav-logo">
-      <img src="logo.png" alt="Logo de Kael Core">
+      <img src="logo.png" alt="Logo de Kael Core" width="40" height="40">
       <span id="navLogoName">Kael Core</span>
       <span class="symbol" id="navLogoSymbol" aria-hidden="true">≠</span>
     </a>
-    <ul class="nav-links" id="navLinks" aria-busy="true">
-      <li><span class="skeleton sk-line w-40"></span></li>
-      <li><span class="skeleton sk-line w-40"></span></li>
-      <li><span class="skeleton sk-line w-40"></span></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#offer">Oferta</a></li>
+      <li><a href="#testimonials">Testimonios</a></li>
+      <li><a class="nav-cta" href="https://wa.me/573012787784?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20proyecto." target="_blank" rel="noopener">Contactar</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -53,21 +118,21 @@
     <!-- ══════════ HERO — editorial asimétrico ══════════ -->
     <section id="hero" aria-label="Presentación">
       <div class="hero-inner">
-        <div class="hero-main" aria-busy="true">
-          <p class="hero-kicker mono" id="heroKicker"><span class="skeleton sk-line w-50"></span></p>
-          <h1 class="hero-title" id="heroTitle"><span class="skeleton sk-title"></span></h1>
-          <p class="hero-tagline" id="heroTagline"><span class="skeleton sk-line w-30"></span></p>
-          <p class="hero-desc" id="heroDesc"><span class="skeleton sk-line w-80"></span></p>
+        <div class="hero-main">
+          <p class="hero-kicker mono" id="heroKicker">(001) — Desarrollo de videojuegos &amp; webs <span class="symbol">≠</span></p>
+          <h1 class="hero-title" id="heroTitle">Kael Core®</h1>
+          <p class="hero-tagline" id="heroTagline"><span class="symbol">≠</span> NOT EQUAL.</p>
+          <p class="hero-desc" id="heroDesc">Desarrollo de videojuegos web y páginas web modernas para negocios y creadores que quieren destacar. Proyectos indie, creatividad y código rápido.</p>
           <div class="hero-btns">
             <a href="#offer" class="btn btn-primary">Quiero las 2 Landing Pages</a>
             <a href="#projects" class="btn btn-ghost">Ver Proyectos</a>
           </div>
         </div>
 
-        <aside class="hero-side" aria-busy="true">
-          <div class="hero-figure skeleton" id="heroSymbol" aria-hidden="true"></div>
+        <aside class="hero-side">
+          <div class="hero-figure" id="heroSymbol" aria-hidden="true">≠<span class="glitch" aria-hidden="true">≠</span><span class="glitch b" aria-hidden="true">≠</span></div>
           <dl class="hero-meta">
-            <div><dt>Rol</dt><dd id="metaRole"><span class="skeleton sk-line w-40"></span></dd></div>
+            <div><dt>Rol</dt><dd id="metaRole">Digital Independent Creator</dd></div>
             <div><dt>Base</dt><dd>Colombia · Remoto</dd></div>
             <div><dt>Estado</dt><dd><span class="dot">●</span> Disponible</dd></div>
             <div><dt>Modo</dt><dd>Freelance</dd></div>
@@ -84,20 +149,20 @@
 
     <!-- ══════════ MARQUEE ══════════ -->
     <div class="marquee" aria-hidden="true">
-      <div class="marquee-track" id="marqueeTrack" aria-busy="true">
-        <div class="marquee-group"><span class="skeleton sk-line" style="width:52rem"></span></div>
-        <div class="marquee-group"><span class="skeleton sk-line" style="width:52rem"></span></div>
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-group"><span>NOT EQUAL</span><span class="symbol">≠</span><span>THINK DIFFERENTLY</span><span class="symbol">≠</span><span>CREATE WITHOUT LIMITS</span><span class="symbol">≠</span><span>BEYOND CONVENTION</span><span class="symbol">≠</span></div>
+        <div class="marquee-group"><span>NOT EQUAL</span><span class="symbol">≠</span><span>THINK DIFFERENTLY</span><span class="symbol">≠</span><span>CREATE WITHOUT LIMITS</span><span class="symbol">≠</span><span>BEYOND CONVENTION</span><span class="symbol">≠</span></div>
       </div>
     </div>
 
     <!-- ══════════ STATS ══════════ -->
     <section id="stats" class="section" aria-label="Cifras">
       <div class="section-inner">
-        <div class="stats-grid" id="statsGrid" aria-busy="true">
-          <div class="stat-item"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span></div>
-          <div class="stat-item"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span></div>
-          <div class="stat-item"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span></div>
-          <div class="stat-item"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span></div>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-item"><div class="stat-value">9+</div><div class="stat-label">Proyectos completados</div></div>
+          <div class="stat-item"><div class="stat-value">4+</div><div class="stat-label">Videojuegos publicados</div></div>
+          <div class="stat-item"><div class="stat-value">5+</div><div class="stat-label">Sitios web en producción</div></div>
+          <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">Autodidacta</div></div>
         </div>
       </div>
     </section>
@@ -109,31 +174,51 @@
           <span class="section-index">(003) — Lo que hago</span>
           <h2 class="section-title">Servicios <span class="accent">≠</span> convencionales</h2>
         </header>
-        <div class="services-grid" id="servicesGrid" aria-busy="true">
-          <article class="service-card"><span class="skeleton sk-line w-30"></span><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-80"></span></article>
-          <article class="service-card"><span class="skeleton sk-line w-30"></span><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-80"></span></article>
-          <article class="service-card"><span class="skeleton sk-line w-30"></span><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-80"></span></article>
-          <article class="service-card"><span class="skeleton sk-line w-30"></span><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-80"></span></article>
+        <div class="services-grid" id="servicesGrid">
+          <article class="service-card reveal">
+            <span class="service-number">01 /</span>
+            <div class="service-icon"><i class="fa-solid fa-gamepad" aria-hidden="true"></i></div>
+            <h3>Desarrollo de Videojuegos</h3>
+            <p>Juegos 2D web con GDevelop. Game design, mecánicas, UI y publicación en itch.io.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">02 /</span>
+            <div class="service-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <h3>Desarrollo Web</h3>
+            <p>Landing pages a $400.000 COP y páginas web completas desde $700.000 COP. Responsive y optimizadas.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">03 /</span>
+            <div class="service-icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></div>
+            <h3>Diseño &amp; UI</h3>
+            <p>Pixel art, diseño de interfaces para juegos y diseño web moderno con foco en UX.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">04 /</span>
+            <div class="service-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
+            <h3>SEO &amp; Rendimiento</h3>
+            <p>Optimización para motores de búsqueda y velocidad de carga.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ══════════ SPLIT DIAGONAL — manifiesto ══════════ -->
-    <section id="manifesto" class="split" aria-label="Manifiesto" aria-busy="true">
+    <section id="manifesto" class="split" aria-label="Manifiesto">
       <div class="split-left">
         <span class="section-index">(002) — Manifiesto</span>
-        <h2 class="section-title" id="manifestoTitle"><span class="skeleton sk-title" style="width:100%"></span></h2>
-        <p id="manifestoText"><span class="skeleton sk-line w-80"></span></p>
+        <h2 class="section-title" id="manifestoTitle">Crear sin fórmulas.</h2>
+        <p id="manifestoText">No sigo tendencias por obligación. Construyo experiencias digitales con identidad propia: diseño, tecnología y experimentación al servicio de ideas que no se parecen a nadie.</p>
         <ul class="split-principles" id="manifestoPrinciples">
-          <li><span class="skeleton sk-line w-70"></span></li>
-          <li><span class="skeleton sk-line w-70"></span></li>
-          <li><span class="skeleton sk-line w-70"></span></li>
-          <li><span class="skeleton sk-line w-70"></span></li>
+          <li><span class="symbol">≠</span> Originalidad sobre lo convencional</li>
+          <li><span class="symbol">≠</span> Creatividad + tecnología</li>
+          <li><span class="symbol">≠</span> Experimentación constante</li>
+          <li><span class="symbol">≠</span> Soluciones con identidad propia</li>
         </ul>
       </div>
       <div class="split-right">
-        <div class="split-symbol skeleton" id="manifestoSymbol" aria-hidden="true"></div>
-        <p class="split-caption" id="manifestoCaption"><span class="skeleton sk-line w-50"></span></p>
+        <div class="split-symbol" id="manifestoSymbol" aria-hidden="true">≠</div>
+        <p class="split-caption" id="manifestoCaption">NOT EQUAL. — Digital Independent Creator</p>
       </div>
     </section>
 
@@ -144,12 +229,27 @@
           <span class="section-index">(005) — Trabajo reciente</span>
           <h2 class="section-title">Proyectos <span class="accent">seleccionados</span></h2>
         </header>
-        <div class="masonry" id="masonry" aria-busy="true">
-          <article class="masonry-item"><span class="skeleton sk-img"></span><div class="project-body"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span><span class="skeleton sk-line w-80"></span></div></article>
-          <article class="masonry-item"><span class="skeleton sk-img"></span><div class="project-body"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span><span class="skeleton sk-line w-80"></span></div></article>
-          <article class="masonry-item"><span class="skeleton sk-img"></span><div class="project-body"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span><span class="skeleton sk-line w-80"></span></div></article>
-          <article class="masonry-item"><span class="skeleton sk-img"></span><div class="project-body"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span><span class="skeleton sk-line w-80"></span></div></article>
-          <article class="masonry-item"><span class="skeleton sk-img"></span><div class="project-body"><span class="skeleton sk-line w-40"></span><span class="skeleton sk-line w-70"></span><span class="skeleton sk-line w-80"></span></div></article>
+        <div class="masonry" id="masonry">
+          <article class="masonry-item reveal">
+            <img src="project-placeholder.svg" alt="Vista previa pendiente del proyecto Salupi Crochet" loading="lazy" width="800" height="600" style="aspect-ratio:4/3;" onerror="this.onerror=null;this.src='project-placeholder.svg';this.alt='Imagen no disponible';">
+            <div class="project-body">
+              <div class="project-meta"><span class="num">/01</span><span>E-commerce</span></div>
+              <h3>Salupi Crochet</h3>
+              <p>Tienda online con catálogo visual, carrito y pasarela de pago.</p>
+              <div class="tags"><span class="tag">E-commerce</span><span class="tag">Mobile-First</span></div>
+              <a href="https://salupicrochet.com" target="_blank" rel="noopener" class="project-link">Ver sitio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="masonry-item reveal">
+            <img src="project-placeholder.svg" alt="Vista previa pendiente del proyecto Car Films" loading="lazy" width="800" height="600" style="aspect-ratio:4/3;" onerror="this.onerror=null;this.src='project-placeholder.svg';this.alt='Imagen no disponible';">
+            <div class="project-body">
+              <div class="project-meta"><span class="num">/02</span><span>Landing Page</span></div>
+              <h3>Car Films</h3>
+              <p>Landing page para estética vehicular. Servicios, galería de trabajos y contacto por WhatsApp.</p>
+              <div class="tags"><span class="tag">Landing Page</span><span class="tag">Autos</span><span class="tag">Responsive</span></div>
+              <a href="https://steticavehicularcarfilms.com" target="_blank" rel="noopener" class="project-link">Ver sitio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -157,29 +257,33 @@
     <!-- ══════════ OFERTA ══════════ -->
     <section id="offer" class="section" aria-label="Oferta">
       <div class="section-inner">
-        <div class="offer-card reveal" id="offerCard" aria-busy="true">
+        <div class="offer-card reveal" id="offerCard">
           <div class="offer-left">
-            <span class="offer-badge" id="offerBadge"><span class="skeleton sk-badge"></span></span>
-            <span class="offer-index" id="offerIndex"><span class="skeleton sk-line w-40"></span></span>
-            <h3 id="offerTitle"><span class="skeleton sk-line w-80"></span></h3>
+            <span class="offer-badge" id="offerBadge">Oferta especial</span>
+            <span class="offer-index" id="offerIndex">(004) — Oferta especial</span>
+            <h3 id="offerTitle">2 Landing Pages Personalizadas</h3>
             <div class="offer-price">
-              <span class="offer-old" id="offerOld"><span class="skeleton sk-line w-30"></span></span>
-              <span class="offer-now" id="offerNow"><span class="skeleton sk-line w-50"></span></span>
+              <span class="offer-old" id="offerOld">$800.000</span>
+              <span class="offer-now" id="offerNow">$300.000<span class="currency"> COP</span></span>
             </div>
-            <p class="offer-note" id="offerNote"><span class="skeleton sk-line w-70"></span></p>
-            <span class="offer-timer" id="offerTimer"><span class="skeleton sk-line w-50"></span></span>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-primary offer-cta" id="offerCta">
+            <p class="offer-note" id="offerNote">Landing individual $400.000 · Web completa desde $700.000 COP</p>
+            <span class="offer-timer" id="offerTimer"></span>
+            <a href="https://wa.me/573012787784?text=Hola%2C%20me%20interesa%3A%202%20Landing%20Pages%20Personalizadas" target="_blank" rel="noopener" class="btn btn-primary offer-cta" id="offerCta">
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              <span id="offerCtaLabel"><span class="skeleton sk-line w-70"></span></span>
+              <span id="offerCtaLabel">Quiero las 2 Landing Pages</span>
             </a>
           </div>
           <div class="offer-right">
             <h4>Incluye</h4>
-            <ul class="offer-features" id="offerFeatures" aria-busy="true">
-              <li><span class="skeleton sk-line w-80"></span></li>
-              <li><span class="skeleton sk-line w-80"></span></li>
-              <li><span class="skeleton sk-line w-80"></span></li>
-              <li><span class="skeleton sk-line w-80"></span></li>
+            <ul class="offer-features" id="offerFeatures">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 2 landing pages personalizadas (valor $800.000)</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Diseño moderno y personalizado</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 100% responsive (móvil, tablet, PC)</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Formulario de contacto o botón WhatsApp</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Sección de servicios, galería o portafolio</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Optimización SEO básica</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Entrega: [COMPLETAR CON EL DUEÑO]</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 1 revisión de ajustes incluida</li>
             </ul>
           </div>
         </div>
@@ -193,25 +297,28 @@
           <span class="section-index">(006) — Lo que dicen</span>
           <h2 class="section-title">Testimonios</h2>
         </header>
-        <div class="carousel" id="testimonialCarousel" aria-roledescription="carrusel" aria-label="Testimonios de clientes" aria-busy="true">
+        <div class="carousel" id="testimonialCarousel" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
           <div class="carousel-viewport" id="carouselViewport">
             <div class="carousel-track" id="carouselTrack">
-              <article class="testi-card carousel-slide" aria-hidden="false">
-                <span class="skeleton sk-line w-40"></span>
-                <span class="skeleton sk-line w-80"></span>
-                <span class="skeleton sk-line w-70"></span>
-                <span class="skeleton sk-line w-50"></span>
+              <article class="testi-card carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 2" aria-hidden="false">
+                <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <p class="testi-text">"[COMPLETAR CON EL DUEÑO: testimonio real autorizado]"</p>
+                <div class="testi-author"><div class="testi-avatar" aria-hidden="true">[</div><div class="testi-info"><strong>[COMPLETAR CON EL DUEÑO]</strong><span>[COMPLETAR CON EL DUEÑO]</span></div></div>
+              </article>
+              <article class="testi-card carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 2" aria-hidden="true">
+                <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                <p class="testi-text">"[COMPLETAR CON EL DUEÑO: testimonio real autorizado]"</p>
+                <div class="testi-author"><div class="testi-avatar" aria-hidden="true">[</div><div class="testi-info"><strong>[COMPLETAR CON EL DUEÑO]</strong><span>[COMPLETAR CON EL DUEÑO]</span></div></div>
               </article>
             </div>
           </div>
           <div class="carousel-controls">
-            <button type="button" class="carousel-arrow" id="carouselPrev" aria-label="Testimonio anterior" aria-controls="carouselTrack" disabled>
-              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-            </button>
-            <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Seleccionar testimonio"></div>
-            <button type="button" class="carousel-arrow" id="carouselNext" aria-label="Siguiente testimonio" aria-controls="carouselTrack" disabled>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </button>
+            <button type="button" class="carousel-arrow" id="carouselPrev" aria-label="Testimonio anterior" aria-controls="carouselTrack" disabled><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+            <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Seleccionar testimonio">
+              <button type="button" class="carousel-dot" role="tab" aria-label="Ir al testimonio 1" aria-selected="true" data-index="0"></button>
+              <button type="button" class="carousel-dot" role="tab" aria-label="Ir al testimonio 2" aria-selected="false" data-index="1"></button>
+            </div>
+            <button type="button" class="carousel-arrow" id="carouselNext" aria-label="Siguiente testimonio" aria-controls="carouselTrack"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </div>
           <p class="visually-hidden" id="carouselStatus" role="status" aria-live="polite"></p>
         </div>
@@ -224,7 +331,7 @@
         <h2 class="section-title reveal">¿Tienes un proyecto en mente?</h2>
         <p class="reveal">Hablemos. Puedo ayudarte a construir tu próximo videojuego o sitio web desde cero.</p>
         <div class="cta-btns reveal">
-          <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="ctaWhatsapp">
+          <a href="https://wa.me/573012787784?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20proyecto." target="_blank" rel="noopener" class="btn btn-primary" id="ctaWhatsapp">
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
           </a>
           <a href="https://www.instagram.com/kaelcore143/" target="_blank" rel="noopener" class="btn btn-ghost">
@@ -237,27 +344,21 @@
 
   <!-- ══════════ FOOTER ══════════ -->
   <footer>
-    <div class="footer-inner" id="footerContent" aria-busy="true">
-      <span class="skeleton sk-line w-50"></span>
-      <span class="skeleton sk-line w-40"></span>
+    <div class="footer-inner" id="footerContent">
+      <span>© 2026 Kael Core® <span class="footer-symbol"> ≠</span> NOT EQUAL.</span>
+      <span class="footer-links">
+        <a href="https://wa.me/573012787784?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20proyecto." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/kaelcore143/" target="_blank" rel="noopener">Instagram</a>
+      </span>
     </div>
   </footer>
 
   <!-- ══════════ WHATSAPP FLOAT ══════════ -->
-  <a href="#" target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Escríbeme por WhatsApp">
+  <a href="https://wa.me/573012787784?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20proyecto." target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Escríbeme por WhatsApp">
     <span class="wa-tooltip">¡Escríbeme!</span>
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
 
-  <noscript>
-    <style>.skeleton, .grain { display: none; }</style>
-    <div class="load-error" style="position:static;transform:none;width:auto;box-shadow:none;">
-      <strong>JavaScript desactivado</strong>
-      <span>Activa JavaScript para ver el portafolio completo.</span>
-    </div>
-  </noscript>
-
-  <!-- Contenido (viene de config.js) -->
   <script src="config.js"></script>
   <script src="main.js"></script>
 </body>

@@ -21,7 +21,7 @@ const CONFIG = {
     role: "Digital Independent Creator",
     kicker: "(001) — Desarrollo de videojuegos & webs",
     tagline: "NOT EQUAL.",
-    description: "Desarrollo videojuegos web con GDevelop y páginas web modernas. Proyectos indie, creatividad y código rápido.",
+    description: "Desarrollo de videojuegos web y páginas web modernas para negocios y creadores que quieren destacar. Proyectos indie, creatividad y código rápido.",
     // Manifiesto (sección split diagonal)
     manifestoTitle: "Crear sin fórmulas.",
     manifesto: "No sigo tendencias por obligación. Construyo experiencias digitales con identidad propia: diseño, tecnología y experimentación al servicio de ideas que no se parecen a nadie.",
@@ -85,7 +85,7 @@ const CONFIG = {
       number: "04",
       icon: "fa-gauge-high",
       title: "SEO & Rendimiento",
-      description: "Optimización para motores de búsqueda y velocidad de carga. PageSpeed 95+.",
+      description: "Optimización para motores de búsqueda y velocidad de carga.",
     },
   ],
 
@@ -99,7 +99,7 @@ const CONFIG = {
     price: "$300.000",
     currency: "COP",
     note: "Landing individual $400.000 · Web completa desde $700.000 COP",
-    timerLabel: "Oferta por tiempo limitado · dos landing pages",
+    timerLabel: "", // Sin urgencia artificial: se oculta automáticamente.
     features: [
       "2 landing pages personalizadas (valor $800.000)",
       "Diseño moderno y personalizado",
@@ -107,7 +107,7 @@ const CONFIG = {
       "Formulario de contacto o botón WhatsApp",
       "Sección de servicios, galería o portafolio",
       "Optimización SEO básica",
-      "Entrega en 5–7 días hábiles",
+      "Entrega: [COMPLETAR CON EL DUEÑO]",
       "1 revisión de ajustes incluida",
     ],
     ctaLabel: "Quiero las 2 Landing Pages",
@@ -142,14 +142,14 @@ const CONFIG = {
   /* ── Testimonios ───────────────────────────────────────── */
   testimonials: [
     {
-      quote: "Robert entregó mi landing page en menos de una semana. El diseño superó mis expectativas y mis clientes me preguntan constantemente quién la hizo.",
-      author: "Valentina R.",
-      role: "Emprendedora · Cali",
+      quote: "[COMPLETAR CON EL DUEÑO: testimonio real autorizado]",
+      author: "[COMPLETAR CON EL DUEÑO]",
+      role: "[COMPLETAR CON EL DUEÑO]",
     },
     {
-      quote: "Contraté el sitio web para mi barbería y quedé encantado. Muy buen precio, rápido y siempre dispuesto a hacer los ajustes que pedí.",
-      author: "Andrés M.",
-      role: "Barbero · Barranquilla",
+      quote: "[COMPLETAR CON EL DUEÑO: testimonio real autorizado]",
+      author: "[COMPLETAR CON EL DUEÑO]",
+      role: "[COMPLETAR CON EL DUEÑO]",
     },
   ],
 };
