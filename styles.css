@@ -76,12 +76,22 @@
 /* ── 2. RESET / BASE ──────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* Fondo general: oscuro, continuo y discreto. Las secciones son
+   transparentes para que se vea el mismo escenario al desplazarse. */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 65% 50% at 15% 0%, rgba(229, 57, 53, 0.075), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 85% 100%, rgba(184, 242, 59, 0.03), transparent 72%),
+    linear-gradient(180deg, #151515 0%, #111111 55%, #0d0d0d 100%);
+  background-attachment: fixed;
+}
 
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  background: var(--color-bg);
+  background: transparent;
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
@@ -292,7 +302,7 @@ nav {
   display: flex; flex-direction: column; justify-content: center;
   padding: calc(var(--nav-height) + 3rem) var(--gutter) var(--space-7);
   overflow: hidden;
-  background: var(--color-bg);
+  background: transparent;
 }
 #hero::before {
   content: ''; position: absolute; inset: 0; z-index: 0;
@@ -443,7 +453,7 @@ nav {
 }
 
 /* ── 12. STATS ────────────────────────────────────────────── */
-#stats { border-bottom: var(--color-border-soft); background: var(--color-bg); }
+#stats { border-bottom: var(--color-border-soft); background: transparent; }
 .stats-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   border-left: var(--color-border-soft);
@@ -469,7 +479,7 @@ nav {
 .stat-label { font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-top: var(--space-3); }
 
 /* ── 13. SERVICES ─────────────────────────────────────────── */
-#services { background: var(--color-bg); }
+#services { background: transparent; }
 .services-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
   border-top: var(--color-border-soft); border-left: var(--color-border-soft);
@@ -478,7 +488,7 @@ nav {
   position: relative;
   padding: clamp(var(--space-5), 3vw, var(--space-7));
   border-right: var(--color-border-soft); border-bottom: var(--color-border-soft);
-  background: var(--color-bg);
+  background: transparent;
   transition: background var(--duration) var(--ease);
   overflow: hidden;
   min-height: 13rem;
@@ -507,7 +517,7 @@ nav {
 /* ── 14. SPLIT DIAGONAL ───────────────────────────────────── */
 .split {
   display: grid; grid-template-columns: 1fr 1fr;
-  background: var(--color-bg);
+  background: transparent;
   border-top: var(--color-border-soft);
   border-bottom: var(--color-border-soft);
   min-height: 80vh;
@@ -559,7 +569,7 @@ nav {
 }
 
 /* ── 15. PROJECTS — masonry ───────────────────────────────── */
-#projects { background: var(--color-bg); }
+#projects { background: transparent; }
 .masonry { columns: 3 300px; column-gap: var(--space-5); }
 .masonry-item {
   break-inside: avoid;
@@ -620,7 +630,7 @@ nav {
   display: grid; grid-template-columns: 1.05fr 1fr;
   border: var(--border-width) solid var(--color-primary);
   border-radius: var(--radius-sm);
-  background: var(--color-bg);
+  background: transparent;
 }
 .offer-left {
   padding: clamp(var(--space-6), 5vw, var(--space-8));
@@ -680,7 +690,7 @@ nav {
 .offer-features i { color: var(--color-primary); font-size: 0.8rem; margin-top: 0.25rem; }
 
 /* ── 17. TESTIMONIALS — carrusel ──────────────────────────── */
-#testimonials { background: var(--color-bg); }
+#testimonials { background: transparent; }
 
 .carousel { max-width: 780px; margin: 0 auto; }
 .carousel-viewport { overflow: hidden; }
@@ -773,7 +783,7 @@ nav {
 /* ── 19. FOOTER ───────────────────────────────────────────── */
 footer {
   border-top: var(--border-width) solid var(--color-on-primary);
-  background: var(--color-bg);
+  background: transparent;
   color: var(--color-text-muted);
   padding: var(--space-6) var(--gutter);
   font-family: var(--font-mono); font-size: var(--text-sm);
@@ -830,7 +840,7 @@ footer {
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: flex-start; gap: var(--space-4);
-    background: var(--color-bg); padding: var(--space-5) var(--gutter) var(--space-6);
+    background: transparent; padding: var(--space-5) var(--gutter) var(--space-6);
     border-bottom: var(--color-border-soft);
   }
   .nav-links.open { display: flex; }
