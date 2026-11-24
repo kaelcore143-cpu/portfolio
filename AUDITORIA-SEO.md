@@ -32,7 +32,7 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 - [x] Patrón de fondo: trama diagonal tenue en rgba blanco cálido + halos carmesí/salvia, manteniendo la paleta original.
 - [x] Targets táctiles del carrusel ampliados a 44 px (el punto visible sigue siendo de 10 px).
 - [x] Efectos visuales discretos: barra de progreso de lectura (2 px carmesí, actualizada con `requestAnimationFrame`), barrido diagonal en hover de servicios y entrada escalonada de tarjetas. El grano y la marquesina siguen como estaban.
-- [x] Cubo 3D verde centrado sobre los datos del hero (`ROL / BASE / ESTADO / MODO`): seis caras CSS con `perspective: 620px` y solo retícula; las ecuaciones (`∑ x² ≠ 0`, `∫ f(x) dx`, `E = mc²`, `∂/∂x`, `√Δ`, `logₙ x`) flotan alrededor del cubo, no dentro. Gira sobre el eje vertical (`cube-spin`, 9 s lineal infinito), sin JS ni scroll; en `prefers-reduced-motion` baja a 18 s. El antiguo símbolo `≠` gigante del hero se eliminó (el `≠` sigue vivo en el tagline, el marquee y el logo del header).
+- [x] Cubo 3D verde centrado sobre los datos del hero (`ROL / BASE / ESTADO / MODO`): seis caras CSS lisas con `perspective: 620px` (sin retícula ni ecuaciones). Gira sobre el eje vertical (`cube-spin`, 9 s lineal infinito), sin JS ni scroll; en `prefers-reduced-motion` baja a 18 s. El antiguo símbolo `≠` gigante del hero se eliminó (el `≠` sigue vivo en el tagline, el marquee y el logo del header).
 - Pendiente (no solicitado ahora): formulario de contacto, sección de proceso, FAQ, política de privacidad y aviso legal.
 - Numeración de secciones inconsistente: `(003)` servicios, `(002)` manifiesto, `(005)` proyectos.
 
