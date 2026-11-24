@@ -348,17 +348,30 @@ nav {
   width: var(--cube-size); height: var(--cube-size);
   margin: 0;
   perspective: 620px;
+  /* La sombra va aquí: aplicar filter al cubo aplanaría su 3D */
+  filter: drop-shadow(10px 14px 12px rgba(17, 17, 17, 0.55));
+  animation: cube-shadow 9s linear infinite;
 }
 .hero-cube {
   position: relative; width: 100%; height: 100%;
   transform-style: preserve-3d;
-  transform: rotateX(-22deg) rotateY(38deg); /* estado estático con reduced-motion */
+  transform: rotateX(-24deg) rotateY(38deg) rotateZ(0deg); /* estado estático */
   animation: cube-spin 9s linear infinite;
   will-change: transform;
 }
+/* Rotación isométrica: los tres ejes y la sombra evolucionan juntos */
 @keyframes cube-spin {
-  from { transform: rotateX(-22deg) rotateY(0deg); }
-  to   { transform: rotateX(-22deg) rotateY(360deg); }
+  0%   { transform: rotateX(-24deg) rotateY(0deg) rotateZ(0deg); }
+  25%  { transform: rotateX(-14deg) rotateY(90deg) rotateZ(2deg); }
+  50%  { transform: rotateX(-28deg) rotateY(180deg) rotateZ(-2deg); }
+  75%  { transform: rotateX(-12deg) rotateY(270deg) rotateZ(1deg); }
+  100% { transform: rotateX(-24deg) rotateY(360deg) rotateZ(0deg); }
+}
+@keyframes cube-shadow {
+  0%, 100% { filter: drop-shadow(10px 14px 12px rgba(17, 17, 17, 0.55)); }
+  25%      { filter: drop-shadow(-8px 16px 14px rgba(17, 17, 17, 0.5)); }
+  50%      { filter: drop-shadow(-12px 10px 12px rgba(17, 17, 17, 0.55)); }
+  75%      { filter: drop-shadow(8px 18px 14px rgba(17, 17, 17, 0.5)); }
 }
 .cube-face {
   position: absolute; inset: 0;
@@ -988,6 +1001,7 @@ footer {
   .reveal { opacity: 1; transform: none; }
   /* El cubo es el efecto protagonista: en modo reducido gira mucho más despacio */
   .hero-cube { animation: cube-spin 18s linear infinite !important; }
+  .hero-cube-scene { animation: cube-shadow 18s linear infinite !important; }
   .service-card::before { transition: none !important; }
   /* La cinta es un anuncio decorativo: se excluye para que siga en movimiento. */
   .marquee-track { animation: marquee 18s linear infinite !important; }
