@@ -82,10 +82,12 @@ html {
   scroll-behavior: smooth;
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(ellipse 65% 50% at 15% 0%, rgba(229, 57, 53, 0.075), transparent 70%),
-    radial-gradient(ellipse 55% 45% at 85% 100%, rgba(184, 242, 59, 0.03), transparent 72%),
-    linear-gradient(180deg, #151515 0%, #111111 55%, #0d0d0d 100%);
+    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(229, 57, 53, 0.14), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 88% 100%, rgba(184, 242, 59, 0.05), transparent 72%),
+    repeating-linear-gradient(135deg, rgba(242, 240, 234, 0.035) 0 1px, transparent 1px 14px),
+    linear-gradient(180deg, #171717 0%, #111111 55%, #0d0d0d 100%);
   background-attachment: fixed;
+  scroll-padding-bottom: 5.5rem;
 }
 
 body {
@@ -871,6 +873,23 @@ footer {
   .offer-price { gap: var(--space-3); }
   .carousel-controls { gap: var(--space-4); }
   .carousel-arrow { width: 44px; height: 44px; }
+
+  /* CTA fijo: mismo botón flotante, ahora con etiqueta y área táctil amplia */
+  .wa-float {
+    bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+    right: var(--space-4);
+    width: auto; min-height: 48px;
+    padding: 0 var(--space-4);
+    gap: 0.5rem;
+    font-size: 1.15rem;
+  }
+  .wa-float::after {
+    content: 'COTIZAR';
+    font-family: var(--font-mono); font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+  .wa-tooltip { display: none; }
+  footer { padding-bottom: 5rem; }
 }
 
 @media (max-width: 480px) {

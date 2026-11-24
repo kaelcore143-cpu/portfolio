@@ -62,7 +62,7 @@
 
   /** Imagen con fallback si el recurso falla. */
   function projectImage(src, alt, aspect) {
-    return `<img src="${src}" alt="${alt}" loading="lazy" width="800" height="600"
+    return `<img src="${src}" alt="${alt}" loading="lazy" width="1280" height="800"
       style="aspect-ratio:${aspect || '4/3'};"
       onerror="this.onerror=null;this.src='project-placeholder.svg';this.alt='Imagen no disponible';">`;
   }
@@ -162,7 +162,7 @@
     if (!items.length) { c.innerHTML = emptyStateHTML('No hay proyectos para mostrar todavía.'); setBusy(c, false); return; }
     c.innerHTML = items.map((p) => `
       <article class="masonry-item reveal">
-        ${projectImage(p.image, p.title, p.aspect)}
+        ${projectImage(p.image, p.alt || p.title, p.aspect)}
         <div class="project-body">
           <div class="project-meta">
             <span class="num">/${p.number || '00'}</span>

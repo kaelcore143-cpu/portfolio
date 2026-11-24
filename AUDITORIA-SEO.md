@@ -26,12 +26,12 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 | A6 | Guard de testimonios apuntaba a un ID inexistente (`testimonialsGrid`). | Corregido a `testimonialCarousel`. |
 | A7 | Contenido de servicios sin encabezados semánticos en el HTML. | `h3` reales por servicio. |
 
-### Medio / bajo (pendiente de aprobación — implica cambios visuales)
-- Formulario de contacto y CTA fijo en móvil (mejoran CRO pero añaden componentes visibles).
-- Sección de proceso en 3–4 pasos y FAQ con respuestas reales.
-- Política de privacidad y aviso legal.
-- Conversión de imágenes a WebP/AVIF cuando haya capturas reales.
-- Revisión de targets táctiles de controles pequeños del carrusel (`carousel-dot`).
+### Medio / bajo
+- [x] CTA fijo en móvil: el botón flotante existente pasa a ser una píldora "Cotizar" de 111×54 px con `env(safe-area-inset-bottom)` y se añadió relleno inferior al footer para no tapar contenido.
+- [x] Capturas reales: se capturaron las portadas publicadas de `salupicrochet.com` y `steticavehicularcarfilms.com` con Chrome headless, se guardaron en WebP (~53 KB y ~39 KB) y se usan en el portafolio con `alt` descriptivo y `loading="lazy"`.
+- [x] Patrón de fondo: trama diagonal tenue en rgba blanco cálido + halos carmesí/salvia, manteniendo la paleta original.
+- [x] Targets táctiles del carrusel ampliados a 44 px (el punto visible sigue siendo de 10 px).
+- Pendiente (no solicitado ahora): formulario de contacto, sección de proceso, FAQ, política de privacidad y aviso legal.
 - Numeración de secciones inconsistente: `(003)` servicios, `(002)` manifiesto, `(005)` proyectos.
 
 ## 2. Qué se conserva de la estética
@@ -50,7 +50,6 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 |---|---|---|
 | Testimonios (2) y sus autores | `#testimonials`, `config.js` | Aportar testimonios reales autorizados o eliminar la sección. |
 | Plazo de entrega de la oferta | `#offer`, `config.js` | Confirmar o quitar el feature. |
-| Capturas reales de proyectos | `#projects` (`project-placeholder.svg`) | Sustituir por `[RECURSO REAL PENDIENTE]` o capturas autorizadas. |
 | Cifras `9+ / 4+ / 5+ / 100%` | `#stats`, `config.js` | Confirmar con el dueño; no se modificaron por ser datos preexistentes. |
 | Precios de la oferta y servicios | `#offer`, `#services`, `config.js` | Confirmar vigencia. |
 | Política de datos | Pendiente | Crear página real antes de añadir formulario. |
@@ -66,5 +65,7 @@ Auditoría del sitio publicado en `https://kaelcore143.com/` y del código local
 - [x] Cuerpo a 16 px; sin scroll horizontal a 360 px (`scrollWidth 345 = clientWidth 345`).
 - [x] Lighthouse local: **SEO 100 / Accessibility 100 / Best Practices 100**, sin fallos (antes: SEO 100 / A11y 94, con `color-contrast` y `target-size`).
 - [x] Consola sin errores; `robots.txt` y `sitemap.xml` responden 200.
+- [x] Capturas reales en WebP cargan con su `alt` y dimensiones (1280×800).
+- [x] CTA fijo móvil no genera scroll horizontal (345 = 345 px a 360 px).
 - [ ] Republicar en GitHub Pages y volver a medir Lighthouse sobre la URL pública.
 - [ ] Confirmar datos de la tabla de placeholders.
